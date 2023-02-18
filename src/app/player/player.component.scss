@@ -1,0 +1,28 @@
+.player{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:10px;
+    background-color: aliceblue;
+    padding-block: 5px;
+    padding-left: 8px;
+    width: 200px;
+    border-radius: 25px 0px 0px 25px;
+    img{
+        width: 20px;
+        height: 20px;
+        background-color: hsl(0, 0%, 90%);
+        border-radius:100% ;
+        padding: 10px;
+    }
+    span{
+        font-size: 24px;
+        width: inherit;
+        text-align: center;
+    }
+}
+
+
+.player-active{
+    background-color: hsl(208, 100%, 80%);
+}
