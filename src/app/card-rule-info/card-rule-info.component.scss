@@ -1,0 +1,21 @@
+.rule-info__display{
+    background-color: white;
+    padding: 20px;
+
+    mat-card-title{
+        text-align: center;
+        font-size: 2rem;
+        padding-inline: 20px;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid black;
+        max-width: 500px;
+    }
+    
+    mat-card-content{
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: justify;
+        max-width: 500px;
+    }
+}

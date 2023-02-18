@@ -98,7 +98,8 @@
 
 .rules-display__wrapper{
     position: absolute;
+    display: flex;
+    justify-content: center;
     bottom: 35px;
-    left: 120px;
-    right: 120px;
+    width: 100%;
 }
