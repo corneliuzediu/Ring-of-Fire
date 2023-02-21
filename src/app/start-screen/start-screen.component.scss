@@ -42,9 +42,8 @@
     display: flex;
     margin-inline: auto;
     flex-direction: column;
-    // align-items: center;
 
-    h1{
+    h1 {
         font-size: 5rem;
         color: white;
         text-shadow: 2px 1px black
@@ -57,7 +56,8 @@
     }
 }
 
-.menu-title{
+
+.menu-title {
     display: flex;
     align-items: center;
     height: 5rem;
@@ -65,11 +65,11 @@
 }
 
 
-.menu-button{
+.menu-button {
     display: flex;
     justify-content: center;
 
-    button{
+    button {
         font-family: inherit;
         font-size: 3rem;
         color: hsla(0, 0%, 100%, 0.8);
@@ -77,11 +77,108 @@
         padding: 5px;
         border: none;
         border-radius: 5px;
-        background-image: linear-gradient(20deg, red , rgb(221, 255, 0));
-        &:hover{
+        background-image: linear-gradient(20deg, red, rgb(221, 255, 0));
+
+        &:hover {
             color: hsla(0, 0%, 100%, 1);
-            background-image: linear-gradient(200deg, red , rgb(221, 255, 0));
+            background-image: linear-gradient(200deg, red, rgb(221, 255, 0));
             cursor: pointer;
+        }
+    }
+}
+
+
+@media(max-width:800px),
+(max-height:800px) {
+    .menu__wrapper {
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+
+    .warning__wrapper {
+        img {
+            width: 120px;
+        }
+    }
+}
+
+
+@media(max-width: 580px),
+(max-height:580px) {
+    .menu__wrapper {
+        h1 {
+            font-size: 3rem;
+            margin-bottom: unset;
+        }
+
+        img {
+            height: 70px;
+        }
+
+        button {
+            font-size: 2rem;
+        }
+    }
+
+
+    .warning__wrapper {
+        img {
+            width: 100px;
+        }
+    }
+}
+
+
+@media(max-width: 440px),
+(max-height:440px) {
+    .menu__wrapper {
+        h1 {
+            font-size: 2rem;
+        }
+
+        img {
+            height: 50px;
+        }
+
+        button {
+            font-size: 1rem;
+        }
+    }
+
+
+    .menu-title {
+        margin-bottom: unset;
+        height: 4rem;
+    }
+
+
+    .warning__wrapper {
+        img {
+            width: 80px;
+        }
+    }
+}
+
+
+@media(max-width: 380px),
+(max-height:380px) {
+    .menu__wrapper {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        img {
+            height: 40px;
+            padding-inline: 0px;
+        }
+    }
+
+
+    .warning__wrapper {
+        img {
+            width: 50px;
         }
     }
 }
