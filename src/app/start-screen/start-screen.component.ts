@@ -13,7 +13,6 @@ export class StartScreenComponent {
   constructor(private firestore: AngularFirestore, private router: Router) { }
 
 
-
   newGame() {
     let game = new Game();
     this.firestore

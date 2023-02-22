@@ -6,6 +6,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './edit-player.component.html',
   styleUrls: ['./edit-player.component.scss']
 })
+
 export class EditPlayerComponent {
   constructor(public dialogRef: MatDialogRef<EditPlayerComponent>) { }
 

@@ -21,16 +21,65 @@
 }
 
 
-@media(max-width:850px),(max-height:850px) {
+@media(max-width:900px) {
+    .rule-info__display {
+        max-width: 500px;
+    }
+}
+
+
+@media(max-width:850px),
+(max-height:850px) {
     .rule-info__display {
         position: absolute;
         bottom: -35px;
         left: 0px;
         right: 0px;
+        max-width: unset;
 
         mat-card-title,
         mat-card-content {
             max-width: 100vw;
         }
+    }
+}
+
+
+@media(max-height:850px) {
+    .rule-info__display {
+        padding: 10px;
+
+        mat-card-title {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+@media (max-width:600px),
+(max-height:600px) {
+    .rule-info__display {
+        mat-card-title {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        mat-card-content {
+            font-size: 0.8rem;
+        }
+    }
+
+    .mat-mdc-card-content {
+        padding: unset;
+    }
+}
+
+
+@media(max-width:460px),
+(max-height:460px) {
+    .rule-info__display {
+        height: 100px;
+        overflow-x: scroll;
+        padding-block: 5px;
     }
 }

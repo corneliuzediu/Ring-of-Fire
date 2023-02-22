@@ -41,6 +41,7 @@ export class GameComponent implements OnInit {
     })
   }
 
+
   newGame() {
     this.game = new Game();
   }
@@ -59,29 +60,46 @@ export class GameComponent implements OnInit {
 
 
   takeCard() {
-    if (this.game.stack.length == 0) {
+    if (this.noMoreCards()) {
       this.gameOver = true;
     } else {
-
-      if (!this.game.pickCardAnimation) {
-        this.game.currentCard = this.game.stack.pop();
-        this.game.pickCardAnimation = true;
-        this.changePlayerActive();
-        this.saveGame();
-
-        setTimeout(() => {
-          this.game.playedCards.push(this.game.currentCard);
-          this.game.pickCardAnimation = false
-          this.saveGame();
-        }, 1000)
+      if (this.ifCanPickCard()) {
+        this.pickCard();
+        this.allowToPickNextCard();
       }
     }
   }
 
 
+  noMoreCards() {
+    return this.game.stack.length == 0;
+  }
+
+
+  ifCanPickCard() {
+    return !this.game.pickCardAnimation
+  }
+
+
+  pickCard() {
+    this.game.currentCard = this.game.stack.pop();
+    this.game.pickCardAnimation = true;
+    this.changePlayerActive();
+    this.saveGame();
+  }
+
+
+  allowToPickNextCard() {
+    setTimeout(() => {
+      this.game.playedCards.push(this.game.currentCard);
+      this.game.pickCardAnimation = false
+      this.saveGame();
+    }, 1000)
+  }
+
+
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
-
     dialogRef.afterClosed().subscribe((name: string) => {
       if (name && name.length > 0) {
         this.game.players.push(name);
@@ -112,14 +130,23 @@ export class GameComponent implements OnInit {
     dialogRef.afterClosed().subscribe((change: string) => {
       if (change) {
         if (change == 'DELETE') {
-          this.game.playerImages.splice(playerId, 1);
-          this.game.players.splice(playerId, 1);
+          this.deletePlayer(playerId);
         } else {
-          this.game.playerImages[playerId] = change;
+          this.updateProfileImg(playerId, change);
         }
         this.saveGame();
       }
     });
+  }
 
+
+  deletePlayer(playerId) {
+    this.game.playerImages.splice(playerId, 1);
+    this.game.players.splice(playerId, 1);
+  }
+
+
+  updateProfileImg(playerId, change) {
+    this.game.playerImages[playerId] = change;
   }
 }

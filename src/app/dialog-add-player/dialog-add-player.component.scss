@@ -1,0 +1,10 @@
+.mdc-dialog__content>:last-child {
+    width: 100%;
+}
+
+
+@media(max-width:420px) {
+    .mdc-dialog__surface {
+        width: 60vw;
+    }
+}

@@ -5,6 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.scss']
 })
+
 export class PlayerComponent {
   @Input() name;
   @Input() playerActive: boolean = false;

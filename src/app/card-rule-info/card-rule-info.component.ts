@@ -5,6 +5,7 @@ import { Component, Input, OnChanges } from '@angular/core';
   templateUrl: './card-rule-info.component.html',
   styleUrls: ['./card-rule-info.component.scss']
 })
+
 export class CardRuleInfoComponent implements OnChanges {
   cardAction = [
     { title: 'Waterfall', description: 'Everyone has to start drinking at the same time. As soon as player 1 stops drinking, player 2 may stop drinking. Player 3 may stop as soon as player 2 stops drinking, and so on.' },
@@ -22,6 +23,7 @@ export class CardRuleInfoComponent implements OnChanges {
     { title: 'Rule', description: 'Make a rule. Everyone needs to drink when he breaks the rule.' },
   ];
 
+  
   title: string = '';
   description: string = '';
   @Input() card: string;

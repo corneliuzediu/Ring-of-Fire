@@ -8,14 +8,13 @@ export class Game {
     public currentCard: string = '';
 
     constructor() {
-        for (let i = 1; i < 2; i++) {
+        for (let i = 1; i < 14; i++) {
             this.stack.push('ace_' + i);
             this.stack.push('clubs_' + i);
             this.stack.push('diamonds_' + i);
             this.stack.push('hearts_' + i);
             shuffle(this.stack);
         }
-
     }
 
 
@@ -32,6 +31,7 @@ export class Game {
     }
 }
 
+
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
 
@@ -46,11 +46,5 @@ function shuffle(array) {
         [array[currentIndex], array[randomIndex]] = [
             array[randomIndex], array[currentIndex]];
     }
-
     return array;
 }
-
-
-
-
-

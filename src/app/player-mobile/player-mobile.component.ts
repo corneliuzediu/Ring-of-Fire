@@ -5,6 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './player-mobile.component.html',
   styleUrls: ['./player-mobile.component.scss']
 })
+
 export class PlayerMobileComponent {
   @Input() name;
   @Input() playerActive: boolean = false;
