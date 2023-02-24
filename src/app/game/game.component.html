@@ -12,7 +12,7 @@
     <!-- Show player on desktop -->
     <div class="scroll-container hide-mobile">
         <app-player (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index"
-            [ngStyle]="{'top.px': 100 + ( i * 80) }" [name]="player" [profileImg]="game.playerImages[i]"
+            [ngStyle]="{'top.px': 50 + ( i * 80) }" [name]="player" [profileImg]="game.playerImages[i]"
             [playerActive]="i == game.currentPlayer" class="player_wrapper "></app-player>
     </div>
 
@@ -44,8 +44,15 @@
     <!-- Show card rule -->
     <app-card-rule-info [card]="game.currentCard" class="rules-display__wrapper"></app-card-rule-info>
 
-    <!-- Add new player button -->
-    <button mat-fab color="primary" (click)="openDialog()" class="add_player-btn">
-        <mat-icon>add</mat-icon>
-    </button>
+    <!-- Add and Share-->
+    <div>
+        <!-- Add new player button -->
+        <button mat-fab color="primary" (click)="openDialog()" class="add_player-btn">
+            <mat-icon>add</mat-icon>
+        </button>
+
+        <button mat-fab color="accent" (click)="openShareLink()" class="share_link-btn">
+            <mat-icon>bookmark_border</mat-icon>
+        </button>
+    </div>
 </div>

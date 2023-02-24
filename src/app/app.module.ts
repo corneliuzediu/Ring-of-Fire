@@ -22,6 +22,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { ShareLinkComponent } from './share-link/share-link.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
     CardRuleInfoComponent,
     PlayerMobileComponent,
     EditPlayerComponent,
+    ShareLinkComponent,
   ],
   imports: [
     BrowserModule,

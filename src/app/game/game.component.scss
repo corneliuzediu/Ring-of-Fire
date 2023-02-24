@@ -1,6 +1,6 @@
 .game-field {
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     max-width: 100%;
     background-image: url('./../../assets/img/background.jpg');
     background-position: center;
@@ -17,7 +17,7 @@
     img {
         rotate: -30deg;
         position: absolute;
-        width: 150px;
+        width: 140px;
     }
 }
 
@@ -98,6 +98,13 @@
 }
 
 
+.share_link-btn{
+    position: absolute;
+    left: 40px;
+    bottom: 35px;
+}
+
+
 .rules-display__wrapper {
     position: absolute;
     display: flex;
@@ -112,7 +119,7 @@
     right: 0;
     top: 0;
     z-index: 2;
-    height: 85vh;
+    height: 75svh;
     width: 200px;
     display: flex;
     gap: -5px;

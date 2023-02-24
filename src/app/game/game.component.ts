@@ -5,6 +5,7 @@ import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute } from '@angular/router';
 import { EditPlayerComponent } from '../edit-player/edit-player.component';
+import { ShareLinkComponent } from '../share-link/share-link.component';
 
 @Component({
   selector: 'app-game',
@@ -60,14 +61,28 @@ export class GameComponent implements OnInit {
 
 
   takeCard() {
-    if (this.noMoreCards()) {
-      this.gameOver = true;
-    } else {
-      if (this.ifCanPickCard()) {
-        this.pickCard();
-        this.allowToPickNextCard();
+    if (this.enoughPlayers()) {
+      if (this.noMoreCards()) {
+        this.gameOver = true;
+      } else {
+        if (this.ifCanPickCard()) {
+          this.pickCard();
+          this.allowToPickNextCard();
+        }
       }
+    } else {
+        this.askToAddPlayers();
     }
+  }
+
+
+  enoughPlayers() {
+    return this.game.players.length > 1
+  }
+
+
+  askToAddPlayers(){
+    this.openDialog();
   }
 
 
@@ -107,6 +122,12 @@ export class GameComponent implements OnInit {
         this.saveGame();
       }
     });
+  }
+
+
+  openShareLink(){
+    const dialogRef = this.dialog.open(ShareLinkComponent);
+
   }
 
 

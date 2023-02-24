@@ -16,14 +16,7 @@
         font-size: 1rem;
         font-weight: 500;
         text-align: justify;
-        max-width: 500px;
-    }
-}
-
-
-@media(max-width:900px) {
-    .rule-info__display {
-        max-width: 500px;
+        max-width: 560px;
     }
 }
 
@@ -66,6 +59,7 @@
 
         mat-card-content {
             font-size: 0.8rem;
+            text-align: center;
         }
     }
 
@@ -75,8 +69,7 @@
 }
 
 
-@media(max-width:460px),
-(max-height:460px) {
+@media(max-height:500px) {
     .rule-info__display {
         height: 100px;
         overflow-x: scroll;
